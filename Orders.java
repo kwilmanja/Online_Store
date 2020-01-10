@@ -23,4 +23,12 @@ public class Orders{
         return this.totalCost;
     }
 
+    public String summary(){
+        String summary ="";
+        for( int x =0; x<this.numberOfItems; x++){
+            summary += this.itemList.getName + "\t" + this.itemList.getID + "\t" + this.itemList.getPrice;
+        }
+        
+    }
+
 }

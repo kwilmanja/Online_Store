@@ -9,7 +9,7 @@ public class Customer{
 		this.email = email;
 	}
 
-	public void addsItem(Item item){
+	public void addItem(Item item){
 		order.addItem(item);
 	}
 

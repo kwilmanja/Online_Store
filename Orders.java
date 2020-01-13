@@ -9,8 +9,16 @@ public class Orders{
     }
 
     public void addItem(Item item){
-        this.itemList[numberOfItems] = item;
-        this.numberOfItems += 1;
+        boolean sameID = false;
+        for( int x =0; x<this.numberOfItems; x++){
+            if( itemList[x].getID() == item.getID() ){
+                sameID = true;
+            }
+        }
+        if(this.numberOfItems < 10 && !sameID){
+            this.itemList[numberOfItems] = item;
+            this.numberOfItems += 1;
+        }
     }
 
     public double calculateCost(){

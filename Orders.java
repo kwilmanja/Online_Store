@@ -1,10 +1,10 @@
 public class Orders{
 
     private int numberOfItems;
-    private Item[] itemList = 10;
+    private Item[] itemList = new Item[10];
     private int totalCost;
 
-    public Order(){
+    public Orders(){
         this.numberOfItems = 0;
     }
 
@@ -13,22 +13,24 @@ public class Orders{
         this.numberOfItems += 1;
     }
 
-    public int calculateCost(){
+    public double calculateCost(){
         this.totalCost = 0;
         int subTotal = 0;
         for (int i = 0; i < this.numberOfItems; i++){
-            this.subTotal += this.itemList[i].getPrice();
+            subTotal += this.itemList[i].getPrice();
         }
         this.totalCost = subTotal + (int)(subTotal * 0.08);
-        return this.totalCost;
+
+        return this.totalCost/100;
     }
 
     public String summary(){
-        String summary ="";
+        String summary ="Order Summary:\n";
         for( int x =0; x<this.numberOfItems; x++){
-            summary += this.itemList.getName + "\t" + this.itemList.getID + "\t" + this.itemList.getPrice;
+            summary += this.itemList[x].getName() + "\t" + this.itemList[x].getID() + "\t" + (double)(this.itemList[x].getPrice())/100 + "\n";
         }
-        
+        summary += "\nTotal Cost:\t" + this.calculateCost();
+        return summary;    
     }
 
 }

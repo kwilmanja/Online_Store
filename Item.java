@@ -3,7 +3,7 @@ public class Item{
     private String id;
     private int price;
 
-    public item(name , id, price){
+    public Item(String name ,String id,int price){
         this . name = name;
         this . id = id;
         this . price = price;

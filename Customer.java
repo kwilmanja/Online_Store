@@ -2,21 +2,21 @@ public class Customer{
 
 	private String name;
 	private String email;
-	private Order order;
+	private Orders order = new Orders();
 
-	public Customer(name, email){
+	public Customer(String name, String email){
 		this.name = name;
 		this.email = email;
 	}
 
-	public void addItem(item){
+	public void addsItem(Item item){
 		order.addItem(item);
 	}
 
 	public String viewOrder(){
-		
-		cost = order.calculateCost();
-
+		return this.name + "\t" + this.email + "\n" + order.summary();
 	}
+
+
 
 }

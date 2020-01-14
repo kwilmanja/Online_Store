@@ -9,7 +9,11 @@ public class Item{
         this . price = price;
     }
 
-    
+    public Item(String name ,String id,int price, int sale){
+        this . name = name;
+        this . id = id;
+        this . price = price - (int)(price*sale/100);
+    }
 
     public int getPrice(){
         return this.price;

@@ -5,7 +5,7 @@ public class Online_Store{
 		john.addItem(jacket);
 		Item shirt = new Item("Shirt", "F12", 900);
 		john.addItem(shirt);
-		Item pants = new Item("Pants", "F7", 700);
+		Item pants = new Item("Pants", "F7", 700, 10);
 		john.addItem(pants);
 		System.out.println(john.viewOrder());
 	}
